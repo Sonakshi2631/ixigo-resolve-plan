@@ -82,7 +82,13 @@ export function SmartAlternativesSheet({
 
         <div key={sort} className="space-y-3 px-4 pb-6">
           {list.map((alt, i) => (
-            <AlternativeCard key={alt.id} alt={alt} index={i} onSelect={onSelect} />
+            <AlternativeCard
+              key={alt.id}
+              alt={alt}
+              index={i}
+              letter={String.fromCharCode(65 + alternatives.findIndex((a) => a.id === alt.id))}
+              onSelect={onSelect}
+            />
           ))}
         </div>
       </DialogContent>

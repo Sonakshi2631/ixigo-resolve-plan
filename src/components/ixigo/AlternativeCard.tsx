@@ -10,10 +10,12 @@ const modeIcon = { train: TrainFront, bus: Bus, plane: Plane } as const;
 export function AlternativeCard({
   alt,
   index,
+  letter,
   onSelect,
 }: {
   alt: Alternative;
   index: number;
+  letter: string;
   onSelect: (alt: Alternative) => void;
 }) {
   return (
@@ -38,7 +40,7 @@ export function AlternativeCard({
             )}
           </Pill>
           <h3 className="mt-2 text-base font-bold leading-tight">
-            Option {String.fromCharCode(65 + index)} · {alt.kind}
+            Option {letter} · {alt.kind}
           </h3>
           <p className="text-sm font-semibold text-foreground/90">{alt.title}</p>
           <p className="text-xs text-muted-foreground">{alt.subtitle}</p>
