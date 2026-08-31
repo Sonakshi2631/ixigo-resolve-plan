@@ -57,15 +57,15 @@ export function SmartAlternativesSheet({
         </DialogHeader>
 
         <div className="sticky top-0 z-10 bg-card/95 px-4 py-3 backdrop-blur">
-          <div className="flex items-center justify-between gap-2">
-            <div className="flex gap-1.5 rounded-full bg-secondary p-1">
+          <div className="flex flex-col gap-2">
+            <div className="flex gap-1 overflow-x-auto rounded-full bg-secondary p-1 [scrollbar-width:none]">
               {sorts.map((s) => (
                 <button
                   key={s.key}
                   type="button"
                   onClick={() => setSort(s.key)}
                   className={cn(
-                    "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-all duration-200",
+                    "inline-flex flex-1 shrink-0 items-center justify-center gap-1.5 whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-semibold transition-all duration-200",
                     sort === s.key
                       ? "bg-card text-primary shadow-card"
                       : "text-muted-foreground hover:text-foreground",
